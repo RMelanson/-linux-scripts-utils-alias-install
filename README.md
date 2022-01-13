@@ -1,1 +1,1 @@
-# -linux-scripts-utils-alias-install
+# linux-scripts-utils-alias-install
