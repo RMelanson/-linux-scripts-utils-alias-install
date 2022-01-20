@@ -1,4 +1,8 @@
 # is_root_user: Determine if current user is root (id = 0)
+echoLog(){
+ echo $* 2>&1 | tee -a setup.log
+}
+
 is_root_user(){
   [ $(id -u) -eq 0 ]
 }
