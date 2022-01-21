@@ -38,3 +38,5 @@ execute_as_root(){
 
 echoLog execute_as_root cp -r etc/profile.d/\* /etc/profile.d
 execute_as_root cp -r etc/profile.d/* /etc/profile.d
+echoLog execute as_root chmod 711  etc/profile.d/startUpAliasFiles
+execute_as_root chmod 711  etc/profile.d/startUpAliasFiles
