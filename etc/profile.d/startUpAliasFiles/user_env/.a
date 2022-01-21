@@ -1,0 +1,6 @@
+alias e='. ~/.env/.e'
+alias a='. ~/.env/.a'
+alias ma='. ~/.env/.ma'
+alias me='. ~/.env/.me'
+alias va='vi ~/.env/.a;a;ma'
+alias ve='vi ~/.env/.e;e;me'

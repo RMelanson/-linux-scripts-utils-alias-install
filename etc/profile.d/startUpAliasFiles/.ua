@@ -1,8 +1,0 @@
-alias e='. ~/.e'
-alias a='. ~/.a'
-alias ma='. ~/.ma'
-alias me='. ~/.me'
-alias va='vi ~/.a;a;ma'
-alias ve='vi ~/.e;e;me'
-alias vma='vi ~/.ma;ma'
-alias vme='vi ~/.me;me'
