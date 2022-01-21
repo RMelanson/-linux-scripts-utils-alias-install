@@ -17,7 +17,5 @@ then {
 }
 fi
 
-cp etc/profile.d/startUpAliasFiles/.ua ~/.a
-cp etc/profile.d/startUpAliasFiles/.um ~/.m
-. ~/.a
-. ~/.m
+cp etc/profile.d/startUpAliasFiles/.user_env/ ~/.env
+. ~/.env/.a
