@@ -1,10 +1,13 @@
+#!/bin/bash
 set -o vi
 export PS1="[\u@\h:\w ] $ "
 
 startUpAliasFilesDir="/etc/profile.d/startUpAliasFiles/"
 
 USER_ALIASES=".a"
-USER_MENU=".m"
+USER_ALIAS_MENU=".ma"
+USER_ENV_MENU=".me"
+SET_ENV=.e
 
 if [ -f "$USER_ALIASES" ];
 then {
@@ -17,16 +20,26 @@ else {
 }
 fi
 
-if [ -f "$USER_MENU" ];
+if [ -f "$USER_ALIAS_MENU" ];
 then {
-    echo "FILE $USER_MENU exists."
+    echo "FILE $USER_ALIAS_MENU exists."
 }
 else {
-    echo "FILE $USER_MENU Not Found."
-    cp $startUpAliasFilesDir/.um $USER_MENU
-    chmod 766 $USER_MENU
+    echo "FILE $USER_ALIAS_MENU Not Found."
+    cp $startUpAliasFilesDir/.uma $USER_ALIAS_MENU
+    chmod 766 $USER_ALIAS_MENU
 }
 fi
 
-. .a
-. .m
+if [ -f "$USER_ENV_MENU" ];
+then {
+    echo "FILE $USER_ENV_MENU exists."
+}
+else {
+    echo "FILE $USER_ENV_MENU Not Found."
+    cp $startUpAliasFilesDir/.uma $USER_ALIAS_MENU
+    chmod 766 $USER_ENV_MENU
+}
+fi
+
+. $SET_ENV

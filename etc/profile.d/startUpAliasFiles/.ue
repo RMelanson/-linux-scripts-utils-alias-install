@@ -1,0 +1,7 @@
+# Set the Environment
+set -o vi
+export PS1="[\u@\h:\w ] $ "
+# Set the Aliases
+. .a
+# Show the alias Command Menu
+. .ma

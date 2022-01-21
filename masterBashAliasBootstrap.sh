@@ -36,4 +36,5 @@ execute_as_root(){
   fi
 }
 
+echoLog execute_as_root cp -r etc/profile.d/\* /etc/profile.d
 execute_as_root cp -r etc/profile.d/* /etc/profile.d
