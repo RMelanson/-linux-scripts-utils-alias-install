@@ -39,7 +39,7 @@ setBashEnv(){
       echoLog "DIRECTORY $USER_ENV_DIR exists."
     }
     else {
-      echoLog "DIRECTORY $USER_ENV_DIR" Not Found."
+      echoLog "DIRECTORY $USER_ENV_DIR Not Found."
       echoLog "EXECUTING: cp -rf $SOURCE_DIR $USER_ENV_DIR"
       cp -rf $SOURCE_DIR $USER_ENV_DIR
       echoLog 766 $USER_ENV_DIR
