@@ -6,7 +6,7 @@ startUpAliasFilesDir="/etc/profile.d/startUpAliasFiles/"
 SOURCE_DIR=$startUpAliasFilesDir/user_env
 USER_ENV_DIR=~/.env
 VIM_RC_FILE=~/.vimrc
-SYNTAX_OFF="syntax=off"
+SYNTAX_OFF="syntax off"
 
 SET_ENV=". $USER_ENV_DIR/.e"
 
