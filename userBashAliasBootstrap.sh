@@ -12,14 +12,17 @@ is_current_shell(){
   [ $shell = "-bash" ] || [ $shell = "bash" ]
 }
 
-if ! is_current_shell
-then {
-  echoLog ERROR: Not current shell
-  echoLog USAGE: . $0
-  echoLog EXITING . $0
-  exit
+strInFile(){
+   str=$1
+   fname=$2
+   echoLog Searching for String $str in File $fname
+   echoLog EXECUTING: cat $fname \| grep -o "$str" \| wc -l
+#   found=$(cat $fname | grep -c "$str")
+   found=$(cat $fname | grep -o "$str" | wc -l)
+   echoLog string found = $found
+  [ ! $found -eq 0 ]
 }
-fi
+
 
 updateBashrc(){
   if strInFile "$SET_ENV" ~/.bashrc
@@ -48,6 +51,15 @@ setBashEnv(){
     }
   fi
 }
+
+if ! is_current_shell
+then {
+  echoLog ERROR: Not current shell
+  echoLog USAGE: . $0
+  echoLog EXITING . $0
+  exit
+}
+fi
 
 setBashEnv
 updateBashrc
