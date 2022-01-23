@@ -52,4 +52,4 @@ setBashEnv(){
   fi
 }
 
-updateBashrc
+setBashEnv
