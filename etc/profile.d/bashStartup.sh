@@ -29,7 +29,7 @@ updateBashrc(){
    then
      echoLog LAUNCH BASH ENVIRONMENT ALIASE\'S ALREADY INSTALLED
   else
-    echoLog LAUNCH BASH ENVIRONMENT ALIASE\'S SETTINGS >> ~/.bashrc
+    echoLog \#LAUNCH BASH ENVIRONMENT ALIASE\'S SETTINGS >> ~/.bashrc
     echoLog EXECUTING: echo $SET_ENV \>\> ~/.bashrc
     echoLog $SET_ENV >> ~/.bashrc
   fi
@@ -37,21 +37,23 @@ updateBashrc(){
 
 turnOffSyntaxColors() {
   if [ -f "$VIM_RC_FILE" ]
-  echoLog $VIM_RC_FILE EXISTS
   then {
-    if strInFile "$SET_ENV" ~/.bashrc
+    echoLog $VIM_RC_FILE EXISTS
+    if strInFile "$SYNTAX_OFF" ~/.vimrc
      then
-       echoLog SYNTAX EXISTS, NOT SETTING
+       echoLog SYNTAX STRING \"$SYNTAX_OFF\" EXISTS IN FILE $VIM_RC_FILE
+       echoLog NOT SETTING \"$SYNTAX_OFF\" in FILE $VIM_RC_FILE
     else
-      echoLog #INSERTING $SYNTAX_OFF INTO FILE $VIM_RC_FILE | tee -a $VIM_RC_FILE
-      echoLog EXECUTING: $SYNTAX_OFF \>\> ~/.vimrc
-      echoLog $SYNTAX_OFF >> ~/.bashrc
+      echoLog TURNING OFF BASH VIM SYNATX COLORS
+      echoLog INSERTING $SYNTAX_OFF INTO FILE $VIM_RC_FILE
+      echoLog EXECUTING: echo $SYNTAX_OFF \>\> ~/.vimrc
+      echo $SYNTAX_OFF >> ~/.vimrc
   fi
   }
   else {
-      echoLog #CREATING FILE "$VIM_RC_FILE" WITH $SYNTAX_OFF INSERTED INTO FILE $VIM_RC_FILE | tee -a $VIM_RC_FILE
-      echoLog EXECUTING: $SYNTAX_OFF \>\> ~/.vimrc
-      echoLog $SYNTAX_OFF >> ~/.bashrc
+      echoLog FILE $VIM_RC_FILE DOES NOT EXIST CREATING SETTING $SYNTAX_OFF
+      echoLog EXECUTING: echo $SYNTAX_OFF \>\> ~/.vimrc
+      echo $SYNTAX_OFF >> ~/.vimrc
   }
   fi
 }
@@ -76,3 +78,4 @@ setBashEnv(){
 echoLog "SETTING ENV"
 setBashEnv
 updateBashrc
+turnOffSyntaxColors
