@@ -4,8 +4,8 @@ export PS1="[\u@\h:\w ] $ "
 
 startUpAliasFilesDir="/etc/profile.d/startUpAliasFiles/"
 SOURCE_DIR=$startUpAliasFilesDir/user_env
-USER_DIR=~/.env
-SET_ENV=". $USER_DIR/.e"
+USER_ENV_DIR=~/.env
+SET_ENV=". $USER_ENV_DIR/.e"
 
 echoLog(){
  echo $* 2>&1 | tee -a setup.log
@@ -34,22 +34,22 @@ updateBashrc(){
 }
 
 setBashEnv(){
-  if [ -d "$USER_DIR" ];
+  if [ -d "$USER_ENV_DIR" ];
     then {
-      echoLog "DIRECTORY $USER_DIR exists."
-      echoLog "SETTING ENV"
+      echoLog "DIRECTORY $USER_ENV_DIR exists."
     }
     else {
-      echoLog "DIRECTORY $SOURCE_DIR Not Found."
-      echoLog "EXECUTING: cp -rf $SOURCE_DIR $USER_DIR"
-      cp -rf $SOURCE_DIR $USER_DIR
-      echoLog 766 $USER_DIR
-      chmod 766 $USER_DIR
-      updateBashrc
+      echoLog "DIRECTORY $USER_ENV_DIR" Not Found."
+      echoLog "EXECUTING: cp -rf $SOURCE_DIR $USER_ENV_DIR"
+      cp -rf $SOURCE_DIR $USER_ENV_DIR
+      echoLog 766 $USER_ENV_DIR
+      chmod 766 $USER_ENV_DIR
       echoLog EXECUTING: $SET_ENV
       $SET_ENV
     }
   fi
 }
 
+echoLog "SETTING ENV"
 setBashEnv
+updateBashrc
