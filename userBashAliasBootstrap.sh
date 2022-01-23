@@ -17,7 +17,6 @@ strInFile(){
    fname=$2
    echoLog Searching for String $str in File $fname
    echoLog EXECUTING: cat $fname \| grep -o "$str" \| wc -l
-#   found=$(cat $fname | grep -c "$str")
    found=$(cat $fname | grep -o "$str" | wc -l)
    echoLog string found = $found
   [ ! $found -eq 0 ]
