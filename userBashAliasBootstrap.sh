@@ -28,7 +28,7 @@ updateBashrc(){
    then
      echoLog LAUNCH BASH ENVIRONMENT ALIASE\'S ALREADY INSTALLED
   else
-    echoLog LAUNCH BASH ENVIRONMENT ALIASE\'S SETTINGS >> ~/.bashrc
+    echoLog \#LAUNCH BASH ENVIRONMENT ALIASE\'S SETTINGS >> ~/.bashrc
     echoLog EXECUTING: echo $SET_ENV \>\> ~/.bashrc
     echoLog $SET_ENV >> ~/.bashrc
   fi
