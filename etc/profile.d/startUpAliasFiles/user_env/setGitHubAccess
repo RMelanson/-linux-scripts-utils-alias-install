@@ -1,0 +1,5 @@
+if [ "$PS1" ]; then
+   eval $("ssh-agent")
+#   ssh-add ~/.ssh/gitHub
+   ssh-add ~/.ssh/sponsorCoin
+fi
