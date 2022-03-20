@@ -74,8 +74,14 @@ setBashEnv(){
     }
   fi
 }
+displayAliasMenu(){
+  echoLog EXECUTING  '. $USER_ENV_DIR/.e'
+  clear
+  . $USER_ENV_DIR/.e
+}
 
 echoLog "SETTING ENV"
 setBashEnv
 updateBashrc
 turnOffSyntaxColors
+displayAliasMenu
